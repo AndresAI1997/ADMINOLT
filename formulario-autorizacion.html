@@ -1,120 +1,239 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>ADMINOLT | Autorizacion de ONU</title>
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>ADMINOLT | Autorizacion de ONU</title>
+
         <link rel="stylesheet" href="css/formulario-autorizacion.css">
-    </head>
-    <body>
-        <div data-include='header.html'></div>
-        <main class="content">
-            <header class="page-header">
-                <div>
-                    <h1>Formulario de autorizacion</h1>
-                    <p>Los datos que completes se guardaran en la API local (localStorage) y quedaran disponibles en las otras pantallas.</p>
-                </div>
-                <a class="botontabla" href="Onus-Sinconfigurar.html">Volver a las ONUs</a>
-            </header>
-            <section class="alert success hidden" data-feedback></section>
-            <section class="alert error hidden" data-feedback-error></section>
-            <div class="formstyle">
-                <form data-authorization-form>
-                    <input type="hidden" name="onuId" id="onuId">
-                    <label for="olt">OLT</label>
-                    <select id="olt" name="olt" required>
-                        <option value="">Selecciona una OLT</option>
-                        <option value="Coronel Vidal">Coronel Vidal</option>
-                        <option value="General Piran">General Piran</option>
-                        <option value="Santa Clara">Santa Clara</option>
-                    </select>
-
-                    <label for="Board">Board</label>
-                    <input type="number" id="Board" name="board" placeholder="Board" required>
-
-                    <label for="Port">Port</label>
-                    <input type="number" id="Port" name="port" placeholder="Port" required>
-
-                    <label for="SN">SN</label>
-                    <input type="text" id="SN" name="sn" placeholder="SN" required>
-
-                    <label for="ONUexternalID">ONU external ID</label>
-                    <input type="text" id="ONUexternalID" name="externalId" placeholder="Identificador">
-
-                    <label for="ONU-TYPE">ONU-TYPE</label>
-                    <select id="ONU-TYPE" name="model">
-                        <option value="1G1FCW2">1G1FCW2</option>
-                        <option value="HG8010H">HG8010H</option>
-                        <option value="HG8120C">HG8120C</option>
-                        <option value="HG8240H">HG8240H</option>
-                        <option value="HG8240T">HG8240T</option>
-                        <option value="HG8242">HG8242</option>
-                        <option value="HG8242H">HG8242H</option>
-                        <option value="HG8245H">HG8245H</option>
-                        <option value="HG8310M">HG8310M</option>
-                    </select>
-
-                    <fieldset class="inline-group">
-                        <legend>ONU Mode</legend>
-                        <label>
-                            <input type="radio" name="mode" value="Bridging">
-                            Bridging
-                        </label>
-                        <label>
-                            <input type="radio" name="mode" value="Routing" checked>
-                            Routing
-                        </label>
-                    </fieldset>
-
-                    <label for="UserVlan">User VLAN-ID</label>
-                    <select id="UserVlan" name="vlan">
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                        <option value="300">300</option>
-                        <option value="400">400</option>
-                        <option value="600">600</option>
-                    </select>
-
-                    <label for="Zone">Zone</label>
-                    <select id="Zone" name="zone">
-                        <option value="Barrio">Barrio</option>
-                        <option value="Centro">Centro</option>
-                        <option value="Parque">Parque</option>
-                        <option value="Costa">Costa</option>
-                    </select>
-
-                    <label for="ODB">ODB (Splitter)</label>
-                    <input type="text" id="ODB" name="odb" placeholder="Splitter / Puerto">
-
-                    <label for="Download">Download speed (Mbps)</label>
-                    <input type="number" id="Download" name="download" placeholder="300">
-
-                    <label for="Upload">Upload speed (Mbps)</label>
-                    <input type="number" id="Upload" name="upload" placeholder="100">
-
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="owner" placeholder="Nombre del cliente">
-
-                    <label for="Direccion">Direccion / Comentario</label>
-                    <input type="text" id="Direccion" name="address" placeholder="Direccion">
-
-                    <label for="Contacto">Contacto</label>
-                    <input type="text" id="Contacto" name="contact" placeholder="Telefono o email">
-
-                    <label for="Notas">Notas</label>
-                    <input type="text" id="Notas" name="notes" placeholder="Observaciones">
-
-                    <div class="form-actions">
-                        <button type="submit">Guardar en API local</button>
-                        <button type="button" class="ghost" data-reset-api>Limpiar ONUs locales</button>
-                    </div>
-                </form>
-            </div>
-        </main>
-        <script src="js/api.js"></script>
-        <script src="js/page-formulario.js"></script>
-    <script src='js/include-header.js'></script></body>
-</html>
-
-
-
-
+    </head>
+
+    <body>
+
+        <div data-include='header.html'></div>
+
+        <main class="content">
+
+            <header class="page-header">
+
+                <div>
+
+                    <h1>Formulario de autorizacion</h1>
+
+                    <p>Los datos que completes se guardaran en la API local (localStorage) y quedaran disponibles en las otras pantallas.</p>
+
+                </div>
+
+                <a class="botontabla" href="index.html">Volver a las ONUs</a>
+
+            </header>
+
+            <section class="alert success hidden" data-feedback></section>
+
+            <section class="alert error hidden" data-feedback-error></section>
+
+            <div class="formstyle">
+
+                <form data-authorization-form>
+
+                    <input type="hidden" name="onuId" id="onuId">
+
+                    <label for="olt">OLT</label>
+
+                    <select id="olt" name="olt" required>
+
+                        <option value="">Selecciona una OLT</option>
+
+                        <option value="Coronel Vidal">Coronel Vidal</option>
+
+                        <option value="General Piran">General Piran</option>
+
+                        <option value="Santa Clara">Santa Clara</option>
+
+                    </select>
+
+
+
+                    <label for="Board">Board</label>
+
+                    <input type="number" id="Board" name="board" placeholder="Board" required>
+
+
+
+                    <label for="Port">Port</label>
+
+                    <input type="number" id="Port" name="port" placeholder="Port" required>
+
+
+
+                    <label for="SN">SN</label>
+
+                    <input type="text" id="SN" name="sn" placeholder="SN" required>
+
+
+
+                    <label for="ONUexternalID">ONU external ID</label>
+
+                    <input type="text" id="ONUexternalID" name="externalId" placeholder="Identificador">
+
+
+
+                    <label for="ONU-TYPE">ONU-TYPE</label>
+
+                    <select id="ONU-TYPE" name="model">
+
+                        <option value="1G1FCW2">1G1FCW2</option>
+
+                        <option value="HG8010H">HG8010H</option>
+
+                        <option value="HG8120C">HG8120C</option>
+
+                        <option value="HG8240H">HG8240H</option>
+
+                        <option value="HG8240T">HG8240T</option>
+
+                        <option value="HG8242">HG8242</option>
+
+                        <option value="HG8242H">HG8242H</option>
+
+                        <option value="HG8245H">HG8245H</option>
+
+                        <option value="HG8310M">HG8310M</option>
+
+                    </select>
+
+
+
+                    <fieldset class="inline-group">
+
+                        <legend>ONU Mode</legend>
+
+                        <label>
+
+                            <input type="radio" name="mode" value="Bridging">
+
+                            Bridging
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio" name="mode" value="Routing" checked>
+
+                            Routing
+
+                        </label>
+
+                    </fieldset>
+
+
+
+                    <label for="UserVlan">User VLAN-ID</label>
+
+                    <select id="UserVlan" name="vlan">
+
+                        <option value="100">100</option>
+
+                        <option value="200">200</option>
+
+                        <option value="300">300</option>
+
+                        <option value="400">400</option>
+
+                        <option value="600">600</option>
+
+                    </select>
+
+
+
+                    <label for="Zone">Zone</label>
+
+                    <select id="Zone" name="zone">
+
+                        <option value="Barrio">Barrio</option>
+
+                        <option value="Centro">Centro</option>
+
+                        <option value="Parque">Parque</option>
+
+                        <option value="Costa">Costa</option>
+
+                    </select>
+
+
+
+                    <label for="ODB">ODB (Splitter)</label>
+
+                    <input type="text" id="ODB" name="odb" placeholder="Splitter / Puerto">
+
+
+
+                    <label for="Download">Download speed (Mbps)</label>
+
+                    <input type="number" id="Download" name="download" placeholder="300">
+
+
+
+                    <label for="Upload">Upload speed (Mbps)</label>
+
+                    <input type="number" id="Upload" name="upload" placeholder="100">
+
+
+
+                    <label for="nombre">Nombre</label>
+
+                    <input type="text" id="nombre" name="owner" placeholder="Nombre del cliente">
+
+
+
+                    <label for="Direccion">Direccion / Comentario</label>
+
+                    <input type="text" id="Direccion" name="address" placeholder="Direccion">
+
+
+
+                    <label for="Contacto">Contacto</label>
+
+                    <input type="text" id="Contacto" name="contact" placeholder="Telefono o email">
+
+
+
+                    <label for="Notas">Notas</label>
+
+                    <input type="text" id="Notas" name="notes" placeholder="Observaciones">
+
+
+
+                    <div class="form-actions">
+
+                        <button type="submit">Guardar en API local</button>
+
+                        <button type="button" class="ghost" data-reset-api>Limpiar ONUs locales</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </main>
+
+        <script src="js/api.js"></script>
+
+        <script src="js/page-formulario.js"></script>
+
+    <script src='js/include-header.js'></script></body>
+
+</html>
+
+
+
+
+
+
+
+
+

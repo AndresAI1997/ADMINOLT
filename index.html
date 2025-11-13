@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>ADMINOLT | ONUs sin configurar</title>
+        <link rel="stylesheet" href="css/onus-sinconfigurar.css">
+    </head>
+    <body>
+        <div data-include='header.html'></div>
+        <main class="content">
+            <header class="page-header">
+                <div>
+                    <h1>ONUs detectadas</h1>
+                </div>
+                <div class="filter-bar">
+                    <label>
+                        OLT
+                        <select data-filter-olt>
+                            <option value="">Todas</option>
+                        </select>
+                    </label>
+                    <label>
+                        Estado
+                        <select data-filter-status disabled>
+                            <option value="pending" selected>Sin configurar</option>
+                        </select>
+                    </label>
+                    <button type="button" data-refresh>Refrescar</button>
+                </div>
+            </header>
+            <section class="onu-summary" data-onu-summary>Cargando ONUs...</section>
+            <section class="onu-group" data-onu-container>
+                <p class="loading">Conectando con la API local...</p>
+            </section>
+        </main>
+        <script src="js/api.js"></script>
+        <script src="js/page-onus.js"></script>
+    <script src='js/include-header.js'></script></body>
+</html>
+
+
+
+
+
+
+
+

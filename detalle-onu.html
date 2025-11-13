@@ -1,99 +1,197 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>ADMINOLT | Ver ONU</title>
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>ADMINOLT | Ver ONU</title>
+
         <link rel="stylesheet" href="css/detalle-onu.css">
-    </head>
-    <body>
-        <div data-include='header.html'></div>
-        <main class="content detail-content">
-            <section class="alert info" data-detail-loading>Cargando datos de la ONU...</section>
-            <section class="alert error hidden" data-detail-error></section>
-            <section class="detail-panel hidden" data-detail-panels>
-                <dl class="info-onus detail-info">
-                    <dt>Name</dt>
-                    <dd data-field="owner">-</dd>
-                    <dt>Board</dt>
-                    <dd data-field="board" data-summary="board">-</dd>
-                    <dt>Port</dt>
-                    <dd data-field="port" data-summary="port">-</dd>
-                    <dt>SN</dt>
-                    <dd data-field="sn" data-summary="sn">-</dd>
-                    <dt>OLT</dt>
-                    <dd data-field="olt">-</dd>
-                    <dt>GPON channel</dt>
-                    <dd data-field="ponType">-</dd>
-                    <dt>ONU</dt>
-                    <dd data-field="onuName">-</dd>
-                    <dt>SN</dt>
-                    <dd data-field="sn">-</dd>
-                    <dt>ONU type</dt>
-                    <dd data-field="model">-</dd>
-                    <dt>Zone</dt>
-                    <dd data-field="zone">-</dd>
-                    <dt>ODB (Splitter)</dt>
-                    <dd data-field="odb">-</dd>
-                    <dt>Subscriber</dt>
-                    <dd data-field="owner">-</dd>
-                    <dt>Address or comment</dt>
-                    <dd data-field="address">-</dd>
-                    <dt>Contact</dt>
-                    <dd data-field="contact">-</dd>
-                    <dt>Authorization date</dt>
-                    <dd data-field="authorizationDate">-</dd>
-                    <dt>ONU external ID</dt>
-                    <dd data-field="externalId">-</dd>
-                    <dd class="detail-edit-row">
-                        <a class="botontabla" data-link-edit href="formulario-autorizacion.html">Editar ONU</a>
-                    </dd>
-                </dl>
-                <div class="detail-status">
-                    <img src="https://arbolito.ADMINOLT.com/content/img/4_eth_2_voip_0_catv.png" alt="Imagen ONU" class="detail-router">
-                    <dl>
-                        <dt>Status</dt>
-                        <dd data-field="status">-</dd>
-                        <dt>ONU/OLT Rx signal</dt>
-                        <dd data-field="rxSignal">-</dd>
-                        <dt>Attached VLANs</dt>
-                        <dd data-field="vlan">-</dd>
-                        <dt>ONU mode</dt>
-                        <dd data-field="mode">-</dd>
-                        <dt>TR069</dt>
-                        <dd>Inactive</dd>
-                        <dt>Mgmt IP</dt>
-                        <dd>Inactive</dd>
-                        <dt>WAN setup mode</dt>
-                        <dd>Setup via ONU webpage</dd>
-                    </dl>
-                </div>
-            </section>
-            <section class="detail-actions hidden" data-detail-buttons>
-                <button type="button">Get status</button>
-                <button type="button">Show running-config</button>
-                <button type="button">SW info</button>
-                <button type="button" class="live">LIVE!</button>
-            </section>
-            <section class="detail-graphs hidden" data-detail-graphs>
-                <article>
-                    <header>
-                        <h3>Traffic / Signal</h3>
-                    </header>
-                    <img src="https://via.placeholder.com/540x180?text=Grafico+Traffic" alt="Grafico de trafico">
-                </article>
-                <article>
-                    <header>
-                        <h3>gpon_onu signal</h3>
-                    </header>
-                    <img src="https://via.placeholder.com/540x180?text=Grafico+Signal" alt="Grafico de senal">
-                </article>
-            </section>
-        </main>
-        <script src="js/api.js"></script>
-        <script src="js/page-onu-detalle.js"></script>
-    <script src='js/include-header.js'></script></body>
-</html>
-
-
-
-
+    </head>
+
+    <body>
+
+        <div data-include='header.html'></div>
+
+        <main class="content detail-content">
+
+            <section class="alert info" data-detail-loading>Cargando datos de la ONU...</section>
+
+            <section class="alert error hidden" data-detail-error></section>
+
+            <section class="detail-panel hidden" data-detail-panels>
+
+                <dl class="info-onus detail-info">
+
+                    <dt>Name</dt>
+
+                    <dd data-field="owner">-</dd>
+
+                    <dt>Board</dt>
+
+                    <dd data-field="board" data-summary="board">-</dd>
+
+                    <dt>Port</dt>
+
+                    <dd data-field="port" data-summary="port">-</dd>
+
+                    <dt>SN</dt>
+
+                    <dd data-field="sn" data-summary="sn">-</dd>
+
+                    <dt>OLT</dt>
+
+                    <dd data-field="olt">-</dd>
+
+                    <dt>GPON channel</dt>
+
+                    <dd data-field="ponType">-</dd>
+
+                    <dt>ONU</dt>
+
+                    <dd data-field="onuName">-</dd>
+
+                    <dt>SN</dt>
+
+                    <dd data-field="sn">-</dd>
+
+                    <dt>ONU type</dt>
+
+                    <dd data-field="model">-</dd>
+
+                    <dt>Zone</dt>
+
+                    <dd data-field="zone">-</dd>
+
+                    <dt>ODB (Splitter)</dt>
+
+                    <dd data-field="odb">-</dd>
+
+                    <dt>Subscriber</dt>
+
+                    <dd data-field="owner">-</dd>
+
+                    <dt>Address or comment</dt>
+
+                    <dd data-field="address">-</dd>
+
+                    <dt>Contact</dt>
+
+                    <dd data-field="contact">-</dd>
+
+                    <dt>Authorization date</dt>
+
+                    <dd data-field="authorizationDate">-</dd>
+
+                    <dt>ONU external ID</dt>
+
+                    <dd data-field="externalId">-</dd>
+
+                    <dd class="detail-edit-row">
+
+                        <a class="botontabla" data-link-edit href="formulario-autorizacion.html">Editar ONU</a>
+
+                    </dd>
+
+                </dl>
+
+                <div class="detail-status">
+
+                    <img src="https://arbolito.ADMINOLT.com/content/img/4_eth_2_voip_0_catv.png" alt="Imagen ONU" class="detail-router">
+
+                    <dl>
+
+                        <dt>Status</dt>
+
+                        <dd data-field="status">-</dd>
+
+                        <dt>ONU/OLT Rx signal</dt>
+
+                        <dd data-field="rxSignal">-</dd>
+
+                        <dt>Attached VLANs</dt>
+
+                        <dd data-field="vlan">-</dd>
+
+                        <dt>ONU mode</dt>
+
+                        <dd data-field="mode">-</dd>
+
+                        <dt>TR069</dt>
+
+                        <dd>Inactive</dd>
+
+                        <dt>Mgmt IP</dt>
+
+                        <dd>Inactive</dd>
+
+                        <dt>WAN setup mode</dt>
+
+                        <dd>Setup via ONU webpage</dd>
+
+                    </dl>
+
+                </div>
+
+            </section>
+
+            <section class="detail-actions hidden" data-detail-buttons>
+
+                <button type="button">Get status</button>
+
+                <button type="button">Show running-config</button>
+
+                <button type="button">SW info</button>
+
+                <button type="button" class="live">LIVE!</button>
+
+            </section>
+
+            <section class="detail-graphs hidden" data-detail-graphs>
+
+                <article>
+
+                    <header>
+
+                        <h3>Traffic / Signal</h3>
+
+                    </header>
+
+                    <img src="https://via.placeholder.com/540x180?text=Grafico+Traffic" alt="Grafico de trafico">
+
+                </article>
+
+                <article>
+
+                    <header>
+
+                        <h3>gpon_onu signal</h3>
+
+                    </header>
+
+                    <img src="https://via.placeholder.com/540x180?text=Grafico+Signal" alt="Grafico de senal">
+
+                </article>
+
+            </section>
+
+        </main>
+
+        <script src="js/api.js"></script>
+
+        <script src="js/page-onu-detalle.js"></script>
+
+    <script src='js/include-header.js'></script></body>
+
+</html>
+
+
+
+
+
+
+
+
+

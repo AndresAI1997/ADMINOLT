@@ -5,7 +5,7 @@ Previsualizacion esttica que replica algunos flujos de SMARTOLT usando datos sim
 ## Caractersticas principales
 
 - **API local**: `js/api.js` combina los datos del JSON (`api/onus.json`, hosteado en GitHub raw) con las ONUs que se guardan en `localStorage`.
-- **ONUs sin configurar**: `Onus-Sinconfigurar.html` lista solo las pending y solo ofrece el botn Autorizar.
+- **ONUs sin configurar**: `index.html` lista solo las pending y solo ofrece el botn Autorizar.
 - **Panel configuradas**: `configuraciones.html` agrega filtros avanzados, tabla estilo SMARTOLT y link View que abre `detalle-onu.html`.
 - **Detalle de ONU**: `detalle-onu.html` muestra la ficha completa + botones de accin e imgenes mock.
 - **Formulario**: `formulario-autorizacion.html` guarda/actualiza la ONU (marcndola como configured y registrando la fecha/usuario).
@@ -22,7 +22,7 @@ Previsualizacion esttica que replica algunos flujos de SMARTOLT usando datos sim
 
 ```bash
 python -m http.server 8080  # o cualquier servidor esttico
-open http://localhost:8080/Onus-Sinconfigurar.html
+open http://localhost:8080/index.html
 ```
 
 ### Flujo sugerido
@@ -50,4 +50,6 @@ open http://localhost:8080/Onus-Sinconfigurar.html
 
 ## Licencia
 
-Proyecto de demostracin sin licencia explcita. Adptalo libremente para presentaciones internas.
+Proyecto de demostracin sin licencia explcita. Adptalo libremente para presentaciones internas.
+
+
