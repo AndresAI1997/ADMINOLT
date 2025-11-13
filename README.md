@@ -1,53 +1,54 @@
 # ADMINOLT demo
 
-Previsualizacion est·tica que replica algunos flujos de SMARTOLT usando datos simulados y almacenamiento local. Sirve para mostrar cÛmo se verÌan las ONUs detectadas, configuradas y su historial de autorizaciones.
+Previsualizacion est√°tica que replica algunos flujos de SMARTOLT usando datos simulados y almacenamiento local. Sirve para mostrar c√≥mo se ver√≠an las ONUs detectadas, configuradas y su historial de autorizaciones.
 
-## CaracterÌsticas principales
+## Caracter√≠sticas principales
 
 - **API local**: `js/api.js` combina los datos del JSON (`api/onus.json`, hosteado en GitHub raw) con las ONUs que se guardan en `localStorage`.
-- **ONUs sin configurar**: `Onus-Sinconfigurar.html` lista solo las pending y solo ofrece el botÛn Autorizar.
-- **Panel configuradas**: `configuraciones.html` agrega filtros avanzados, tabla estilo SMARTOLT y link ìViewî que abre `detalle-onu.html`.
-- **Detalle de ONU**: `detalle-onu.html` muestra la ficha completa + botones de acciÛn e im·genes mock.
-- **Formulario**: `formulario-autorizacion.html` guarda/actualiza la ONU (marc·ndola como configured y registrando la fecha/usuario).
-- **Reportes**: `reportes.html` crea una tabla de autorizaciones con filtros por usuario, b˙squeda y rango de fechas.
-- **Header reutilizable**: todas las p·ginas cargan `header.html` din·micamente con `js/include-header.js`.
-- **Estilos modulares**: cada p·gina tiene su CSS en `css/<pagina>.css`, que importa `css/main.css`.
+- **ONUs sin configurar**: `Onus-Sinconfigurar.html` lista solo las pending y solo ofrece el bot√≥n Autorizar.
+- **Panel configuradas**: `configuraciones.html` agrega filtros avanzados, tabla estilo SMARTOLT y link ‚ÄúView‚Äù que abre `detalle-onu.html`.
+- **Detalle de ONU**: `detalle-onu.html` muestra la ficha completa + botones de acci√≥n e im√°genes mock.
+- **Formulario**: `formulario-autorizacion.html` guarda/actualiza la ONU (marc√°ndola como configured y registrando la fecha/usuario).
+- **Reportes**: `reportes.html` crea una tabla de autorizaciones con filtros por usuario, b√∫squeda y rango de fechas.
+- **Header reutilizable**: todas las p√°ginas cargan `header.html` din√°micamente con `js/include-header.js`.
+- **Estilos modulares**: cada p√°gina tiene su CSS en `css/<pagina>.css`, que importa `css/main.css`.
 
 ## Requisitos
 
 - Navegador moderno con soporte para `fetch` y `localStorage`.
-- Servidor est·tico (GitHub Pages, Vite preview, `python -m http.server`, etc.).
+- Servidor est√°tico (GitHub Pages, Vite preview, `python -m http.server`, etc.).
 
 ## Puesta en marcha local
 
 ```bash
-python -m http.server 8080  # o cualquier servidor est·tico
+python -m http.server 8080  # o cualquier servidor est√°tico
 open http://localhost:8080/Onus-Sinconfigurar.html
 ```
 
 ### Flujo sugerido
 
-1. **ONUs sin configurar**: detecta la lista pendiente y autoriza alguna (botÛn Autorizar).
-2. **Formulario**: completa los datos y envi·. Guarda en localStorage y redirige al perfil configurado.
-3. **Configuradas**: filtr·/orden· y us· ìViewî para abrir la ficha.
-4. **Detalle**: revis· la ficha + gr·ficos mock.
-5. **Reportes**: revis· el historial con filtros (b˙squeda, usuario, fechas).
+1. **ONUs sin configurar**: detecta la lista pendiente y autoriza alguna (bot√≥n Autorizar).
+2. **Formulario**: completa los datos y envi√°. Guarda en localStorage y redirige al perfil configurado.
+3. **Configuradas**: filtr√°/orden√° y us√° ‚ÄúView‚Äù para abrir la ficha.
+4. **Detalle**: revis√° la ficha + gr√°ficos mock.
+5. **Reportes**: revis√° el historial con filtros (b√∫squeda, usuario, fechas).
 
 ## Deploy en GitHub Pages
 
-1. SubÌ todo el directorio a un repo p˙blico (`main` branch).
-2. En Settings ? Pages, seleccion· la branch `main` y la carpeta raÌz `/`.
-3. Esper· a que GitHub Pages genere la URL (`https://usuario.github.io/repo`).
+1. Sub√≠ todo el directorio a un repo p√∫blico (`main` branch).
+2. En Settings ? Pages, seleccion√° la branch `main` y la carpeta ra√≠z `/`.
+3. Esper√° a que GitHub Pages genere la URL (`https://usuario.github.io/repo`).
 
 > Tip: los enlaces son relativos, por lo que el sitio funciona igual en localhost o Pages.
 
-## PersonalizaciÛn
+## Personalizaci√≥n
 
-- Actualiz· `api/onus.json` o el repo remoto para nuevas ONUs de ejemplo.
-- Agreg· estilos especÌficos en `css/<pagina>.css` para cada vista.
-- Cambi· el header ˙nico editando `header.html`.
-- Ajust· los scripts en `js/` (por ejemplo, `js/page-reportes.js` para m·s columnas o filtros).
+- Actualiz√° `api/onus.json` o el repo remoto para nuevas ONUs de ejemplo.
+- Agreg√° estilos espec√≠ficos en `css/<pagina>.css` para cada vista.
+- Cambi√° el header √∫nico editando `header.html`.
+- Ajust√° los scripts en `js/` (por ejemplo, `js/page-reportes.js` para m√°s columnas o filtros).
 
 ## Licencia
 
-Proyecto de demostraciÛn sin licencia explÌcita. Ad·ptalo libremente para presentaciones internas.
+Proyecto de demostraci√≥n sin licencia expl√≠cita. Ad√°ptalo libremente para presentaciones internas.
+
