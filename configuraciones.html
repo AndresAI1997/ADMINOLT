@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>ADMINOLT | Ficha de ONU</title>
+        <link rel="stylesheet" href="css/configuraciones.css">
+    </head>
+    <body>
+        <div data-include='header.html'></div>
+        <main class="content">
+            <header class="page-header">
+                <div>
+                    <h1>ONUs configuradas</h1>
+                    <p>Listado dinamico alimentado por la API de GitHub y las configuraciones locales.</p>
+                </div>
+                <div class="header-actions">
+                    <a class="botontabla" href="formulario-autorizacion.html">Nueva autorizacion</a>
+                </div>
+            </header>
+            <section class="filter-toolbar">
+                <div class="filter-row single-line">
+                    <label class="filter-search">
+                        <span>Search</span>
+                        <input type="text" placeholder="SN, IP, nombre, direccion" data-filter-search>
+                    </label>
+                    <label>
+                        <span>OLT</span>
+                        <select data-filter-olt>
+                            <option value="">Any</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Board</span>
+                        <select data-filter-board>
+                            <option value="">Any</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Port</span>
+                        <select data-filter-port>
+                            <option value="">Any</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Zone</span>
+                        <select data-filter-zone>
+                            <option value="">Any</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>VLAN</span>
+                        <select data-filter-vlan>
+                            <option value="">Any</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Modo (B/R)</span>
+                        <select data-filter-mode>
+                            <option value="">Any</option>
+                            <option value="Routing">Routing</option>
+                            <option value="Bridging">Bridging</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Status</span>
+                        <select data-filter-online>
+                            <option value="">Any</option>
+                            <option value="online">Online</option>
+                            <option value="offline">Offline</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Signal</span>
+                        <select data-filter-signal>
+                            <option value="">Any</option>
+                            <option value="strong">Alta</option>
+                            <option value="medium">Media</option>
+                            <option value="weak">Baja</option>
+                            <option value="none">Sin dato</option>
+                        </select>
+                    </label>
+                    <div class="filter-actions">
+                        <button type="button" data-filter-apply>Filtrar</button>
+                        <button type="button" class="ghost" data-filter-reset>Limpiar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="alert info" data-config-loading>Buscando ONUs configuradas...</section>
+            <section class="alert error hidden" data-config-error></section>
+            <section class="onu-section" data-config-wrapper>
+                <div class="onu-summary" data-config-summary>Sin datos.</div>
+                <div class="table-wrapper">
+                    <table class="configured-table">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>View</th>
+                                <th>Name</th>
+                                <th>SN / MAC</th>
+                                <th>ONU</th>
+                                <th>Zone</th>
+                                <th>ODB</th>
+                                <th>Signal</th>
+                                <th>B/R</th>
+                                <th>VLAN</th>
+                                <th>Type</th>
+                                <th>Auth date</th>
+                            </tr>
+                        </thead>
+                        <tbody data-config-table>
+                            <tr>
+                                <td colspan="12">Cargando...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <script src="js/api.js"></script>
+        <script src="js/page-configuraciones.js"></script>
+    <script src='js/include-header.js'></script></body>
+</html>
+
+
+
+

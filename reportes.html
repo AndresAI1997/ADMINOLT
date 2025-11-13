@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ADMINOLT | Reportes de autorizacion</title>
+        <link rel="stylesheet" href="css/reportes.css" />
+    </head>
+    <body>
+        <div data-include='header.html'></div>
+        <main class="content">
+            <header class="page-header">
+                <div>
+                    <h1>Autorizaciones</h1>
+                    <p>Historial local de ONUs autorizadas mediante el formulario.</p>
+                </div>
+            </header>
+            <section class="report-filter">
+                <label>
+                    Search
+                    <input type="text" placeholder="SN o Nombre" data-report-search />
+                </label>
+                <label>
+                    Usuario
+                    <select data-report-user>
+                        <option value="">Any</option>
+                    </select>
+                </label>
+                <div class="date-range">
+                    <label>
+                        Desde
+                        <input type="text" class="date-input" placeholder="dd / mm / aaaa" data-report-from />
+                    </label>
+                    <label>
+                        Hasta
+                        <input type="text" class="date-input" placeholder="dd / mm / aaaa" data-report-to />
+                    </label>
+                </div>
+                <div class="filter-actions">
+                    <button type="button" data-report-apply>Filtrar</button>
+                    <button type="button" class="ghost" data-report-reset>Limpiar</button>
+                </div>
+            </section>
+            <section class="onu-summary" data-report-summary>Sin datos.</section>
+            <div class="table-wrapper">
+                <table class="configured-table">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>SN / MAC</th>
+                            <th>Nombre dado</th>
+                            <th>Fecha de autorizacion</th>
+                        </tr>
+                    </thead>
+                    <tbody data-report-table>
+                        <tr><td colspan="4">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <script src="js/api.js"></script>
+        <script src="js/page-reportes.js"></script>
+    <script src='js/include-header.js'></script></body>
+</html>
+
+
+
+
